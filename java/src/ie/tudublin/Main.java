@@ -40,6 +40,15 @@ public class Main
         processing.core.PApplet.runSketch( a, new Life());
     }
 
+<<<<<<< HEAD
+=======
+    public static void timing()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new TimingExample());
+    }
+
+>>>>>>> 74741885e9318c670d6be4ad6557aea130c7cd11
 
     public static void audio1()
 	{

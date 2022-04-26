@@ -23,8 +23,8 @@ Resources
 - [Assignments](assignments.md)
 
 - Week 5 - Teams Submission
-- Week 11 Lab Test 20% 
-- Week 13 Assignment Submission - 30%
+- 27 April - Lab Test 20% 
+- 4th May Assignmemnt Submission - 30%
 - End of Year exam - 50%
 
 # Last years course
@@ -38,6 +38,270 @@ Resources
 - https://github.com/skooter500/OOP-2018-Lab-Test-2
 - https://github.com/skooter500/OOP_Labtest1_2017_Starter
 - https://github.com/skooter500/OOP-LabTest1-2016
+
+## Week 12 - Bullets and singing
+- [Recording of the class](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/EfI61WVF57xBvOptHmYxUZABZCiSBcSoLBiAGuf49cnSug?e=NE7vJx)
+
+  Put your Roots Down
+
+  Put your roots down 
+
+  Put your feet on the ground 
+
+  Can you hear what she says 
+
+  Are you listening? X2
+
+  Sweet sound of the water,
+
+  as it moves across the stones
+
+  Same sound as the blood in your body, as it moves across your bones
+
+  Are you listening, ooh ooh x2
+
+
+## Week 11 - YASC Part 1
+- [Recording of the class](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/Edu2JUxUJnpNk0DJum_UHIoBNnXLW71f-De16xyCEu9L-w?e=orgOaw)
+
+- [Recording of the tutorial](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/EdnREXh-iZVFmXzkZY34zNABey4G2mDiORbj42WohFMkFw?e=7WhKLI)
+
+A couple of solutions to [this codingbat exercise](https://codingbat.com/prob/p105771)
+
+My solution:
+
+```Java
+public int[] evenOdd(int[] nums) {
+  int swaps = 0;
+  do
+  {
+    swaps = 0;
+   for(int i = 0 ; i < nums.length -1 ; i ++)
+   {
+     if (nums[i] % 2 != 0 && nums[i+1] % 2 == 0)
+     {
+       int temp = nums[i];
+       nums[i] = nums[i + 1];
+       nums[i+1] = temp;
+       swaps ++;
+     }
+   }
+  }
+  while (swaps > 0);
+ return nums;
+}
+```
+
+Submitted by Ho Chung:
+
+```Java
+public int[] evenOdd(int[] nums) {
+  int temp[] = new int[nums.length];
+  int start = 0;
+  int end = nums.length - 1;
+  for (int i = 0; i < nums.length; i ++){
+    if (nums[i] % 2 == 0) {
+      temp[start] = nums[i];
+      start++;
+    }
+    else {
+      temp[end] = nums[i];
+      end--;
+    }
+  }
+  return temp;
+}
+```
+
+Submitted by Christina Vargka:
+
+```Java
+public int[] evenOdd(int[] nums) {
+int counter = 0;
+int[] evods = new int[nums.length];
+for(int i = 0; i < nums.length; i++){
+if(nums[i] % 2 == 0){
+evods[counter] = nums[i];
+counter++;
+}
+}
+for(int i = 0; i < nums.length; i++){
+if(nums[i] % 2 == 1){
+evods[counter] = nums[i];
+counter++;
+}
+}
+return evods;
+}
+```
+
+## Lab
+- Work on your assignments!
+
+## Week 10 - Loading and visualising a dataset - Star Map example
+- [Recording of the class](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/EcgrS0Sh8v1CgiN9-HHlXBkBs7LHTxG8L08S1HLac0QKfQ?e=9Vxemq)
+- [Link to the original lab test](https://github.com/skooter500/OOP-LabTest1-2016)
+
+### Lab
+- Complete the lab test from Monday's class!
+- Try out [last years test](https://github.com/skooter500/OOP-Test-2021-Starter)
+
+## Week 9 - Digital Audio - Part 2
+- [Recording of the class](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/Eete7lQb5h9GhcLM6Ln_xC4B7WS3JPl-f4Mn0XTBLv6ydA?e=sid5gi)
+
+### Lab
+
+Update your forks to get the code we wrote on Monday!
+
+When we take a frequency and get the note name for that frequency, this is called "spelling" the frequency. Here is some Java code for the frequencies of the notes in several octaves of the the D Major scale. For musicians in the class, you will know that D Major has 2 sharps. F# and C#, so the frequencies for the notes F and C are those for F# and C#
+
+```Java
+float[] frequencies = {293.66f, 329.63f, 369.99f, 392.00f, 440.00f, 493.88f, 554.37f, 587.33f
+			, 659.25f, 739.99f, 783.99f, 880.00f, 987.77f, 1108.73f, 1174.66f};
+	String[] spellings = {"D,", "E,", "F,", "G,", "A,", "B,", "C", "D", "E", "F", "G", "A", "B","c", "d", "e", "f", "g", "a", "b", "c'", "d'", "e'", "f'", "g'", "a'", "b'", "c''", "d''"};
+```
+-  Write a class called PitchSpeller that has the above 2 arrays as fields. It should have a method ```public String spell(float frequency)``` that takes a frequency as a parameter and returns the spelling which is *closest* to that frequency. Test your solution by adding code to the main method. For example:
+
+```Java
+PitchSpeller ps = new PitchSpeller();
+System.out.println(ps.spell(330));
+System.out.println(ps.spell(420));
+System.out.println(ps.spell(1980));
+```
+
+Should print:
+
+```
+E,
+A,
+b
+```
+
+You can use the ```Math.abs``` method in your solution to get the absolute value of a number.
+
+Now you can use the PitchSpeller class with the code we wrote on Monday and you will have made a simple transcription system.
+
+Here is a video of what your finished program might look like:
+
+[![YouTube](http://img.youtube.com/vi/bfLVzCD2UC0/0.jpg)](https://youtu.be/bfLVzCD2UC0)
+
+## Week 8 - Review Week
+- No classes
+
+## Week 7 - Conway's Game of Life
+### Lecture
+- [Recording of the class](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/EVSYi7mI1y9Hgjgq3ibl4yEBRBEUzJyWLEiwIoLWkmR21g?e=Z6Bidf)
+
+### Lab
+
+Your game of life should look like this (click the image for a video):
+
+[![YouTube](http://img.youtube.com/vi/SmH2r_ChmFY/0.jpg)](https://www.youtube.com/watch?v=SmH2r_ChmFY)
+
+Some extra things you can implement you can see in the video:
+
+- Increase size and change the size of the screen and see what effect this has on the simulation 
+- Press space to pause and resume the simulation
+- Press 1 to randomise the board again
+- Press 2 to clear the board
+- Press 3 to draw a cross shape and see how it evolves
+- Drag the mouse across the window to set cells at the mouse position to be alive.
+
+Some extra things you can implement that are not in the video
+
+- Draw a glider at the mouse position. This is starting pattern that will evolve a pattern that walks across the screen
+- Draw a Gosper Gun at the mouse position. This is a starting pattern that will spawn creatures indefinitely
+
+You can read more about these starting patterns and others in [this wikipedia article](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) and see examples in this video:
+
+[![YouTube](http://img.youtube.com/vi/HMYh4jKdtNU/0.jpg)](https://www.youtube.com/watch?v=HMYh4jKdtNU)
+
+If you want to learn more about cellular automata check out: 
+
+- [The Nature of Code](https://natureofcode.com/)
+- [A New Kind of Science](https://writings.stephenwolfram.com/2017/05/a-new-kind-of-science-a-15-year-view/)
+
+
+
+
+## Week 6 - Audio
+
+### Lecture
+- [Recording of the class](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/EVB4djPnFFtGhai0WdDX6fQBd9bUDVTcj-9jVwMzGCi0TA?e=xqOyVj)
+
+### Lab
+### Learning Outcomes
+- Practice for loops
+- Demonstrate an understanding of how digital audio works
+- Practice computational thinking and problem solving
+- Have fun making beautiful things 
+
+Update your forks and have a look at Audio1.java this is the code we wrote on Monday with some modifications. Checkout the ```keyPressed``` function. This starts and restarts the audio file when you press space. Also it sets the value of the ```which``` variable to be the numbers 0-5 when you press the appropriate key on the keyboard. If your computer wont play the audio file for some reason,you can uncomment the code to read audio from the microphone instead or use a .wav file instead.
+
+Also the code use the MP3 file in the repo and also the visualisation uses a buffer where each element is lerped. This is similar to how we lerped the amplitude on Monday
+
+Ok now check out this video of 5 visuals you can make today. Pressing the keys 0-4 on the keyboard should change the visual in your sketch.
+
+[![YouTube](http://img.youtube.com/vi/xF7VrXZqLko/0.jpg)](https://www.youtube.com/watch?v=xF7VrXZqLko)
+
+- 0 - The wavy lines visual - To make this, flip the order of the x2, y2 parameters on the line
+- 1 - The waveform
+- 2 - The waveform drawn down the 4 sides of the screen
+- 3 - The circle - Use the lerped amplitude to control the size of the circle
+- 4 - The square - Again use the lerped amplitude to control the size of the square. You can also use rectMode(CENTER) to make the x and y parameters of the rect function determine the center of the rect rather than the coordinates of the top left corner
+- 5 - There is no visual associated with 5 in the video, so come up with your own!
+
+## Week 5 - Arrays
+### Lecture
+- [Recording of the class](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/Edw1fm7vefhMhbZWVnyJQT4BBfXQPzTg2soHMppqoV51BQ?e=PpPRit)
+- [Recording of the Tutorial](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/ETzVZfvOpPlFkkY1DOatswcBnXHqOdvz8izb37PwlJIwMQ?e=wi4SVu)
+
+### Lab
+### Learning Outcomes
+- Practice iterating over arrays
+- Practice computational thinking
+
+Check out this video of the assignment I wrote in GWBasic for the statistics module in first year WMT in Kevin St in 1990 (click the image for video):
+
+[![YouTube](http://img.youtube.com/vi/p3Vui6q_wPw/0.jpg)](https://www.youtube.com/watch?v=p3Vui6q_wPw)
+
+And here is the [source code](https://github.com/skooter500/StatsAssignment) in case you are interested!
+
+Inspired by the video, see if you can write code to generate the following graphs of the rainfall data. Start with the file Arrays.java. You will find these *much easier* if you use the [map function](https://processing.org/reference/map_.html) we learned in Monday's class. 
+
+When you are doing these, make sure your code works even if you change the size of the drawing window or change the values in the array.
+
+- A bar chart:
+
+  ![Sketch](images/p37.png)
+
+  Start by drawing the axis, then draw the ticks and print the text, then draw the bars. You can use ```textAlign(CENTER, CENTER)``` to align the text
+  Use the HSB color space to assign different colors to each bar
+
+- A trend line:
+
+	![Sketch](images/p38.png)
+
+  This one is a bit trickier because you have to calculate the start xy and end xy for each line. Your for loop for drawing the trend lines can start at 1 instead of 0 and then you can get the previous value for the start of each line by taking rainfall[i - 1].
+
+- A pie chart 
+
+	![Sketch](images/p39.png)
+
+	You can use the the [arc function](https://processing.org/reference/arc_.html) to draw arcs and sin & cos to calculate the x and y coordinates to print the text. This one is the most challenging. Remember that a pie chart shows the proportion of each data point in the sum of all the data, so you will have to calculate the sum of all the rain fall and figure out how much each month is relative to the sum. It's best to draw the segments first and then draw the labels. Your map function might look something like this:
+
+	```Java
+	float angle = map(rainfall[i], 0, sum, 0, TWO_PI);
+	```
+
+Don't forget to update your forks of the repository from my master branch and create a new branch for your work today!!
+
+## Week 4 - Loops
+### Lecture
+- [Recording of the class](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/EdUrk_7Hf3hDvXYbJuwQcvkBrEkzVq0Wrn9aJQk5XL2jcw?e=mWbyOj)
+
+### Lab
+Keep working on the exercises from last week. If you have them all completed, you can try out [this lab about using git and github](gitlab.md).
 
 ## Week 3
 
